@@ -54,10 +54,7 @@ public partial class MainPage : ContentPage
 	
 	#region Properties
 
-	public RaceTrackSimulator RaceTrackSim
-	{
-		get { return _raceTrackSim; }
-	}
+	public RaceTrackSimulator RaceTrackSim => _raceTrackSim;
 
 	public string LblMinimumCheerTitle
 	{
@@ -139,7 +136,7 @@ public partial class MainPage : ContentPage
 			_raceTrackSim.CurrentBettor = OnSelectBettor();
 
 			// Validate the Bettor cash and bet on the racer
-			double betAmount = _raceTrackSim.CurrentBettor.ValidateBetAmount(_txtBettorCash.Text, _raceTrackSim.CurrentBettor);
+			double betAmount = _raceTrackSim.CurrentBettor.ValidateBetAmount(_txtBettorCash.Text);
 
 			// Validating if the Bettor chose an actual Racer
 			string pickedRacer = _pckHamsterRacers.SelectedItem?.ToString();
@@ -306,7 +303,7 @@ public partial class MainPage : ContentPage
 		}
 	}
 	
-	public async void ToggleMusic()
+	public void ToggleMusic()
 	{
 
 		// Play the audio

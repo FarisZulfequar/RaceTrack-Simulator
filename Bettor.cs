@@ -56,17 +56,6 @@ public class Bettor
         get { return _name; }
         set { _name = value; }
     }
-
-    public double Cash
-    {
-        get { return _cash; }
-        set
-        {
-            if (value >= _minimumBetAmount && value <= Cash)
-            { _cash = value; }
-            else { _cash = 0; }
-        }
-    }
     
     /// <summary>
     /// If the user placed a bet 
@@ -80,22 +69,14 @@ public class Bettor
             {
                 return false;
             }
-            // If a bettor did place a bet it returns true
+            // If a bettor did place a bet, it returns true
             return true;
         }
     }
 
-    public RadioButton BettorUI
-    {
-        get { return _bettorUI; }
-        set { _bettorUI = value; }
-    }
+    public RadioButton BettorUI => _bettorUI;
 
-    public Entry BetDescUI
-    {
-        get { return _betDescUI; }
-        set { _betDescUI = value; }
-    }
+    public Entry BetDescUI => _betDescUI;
 
     public Bet Bet
     {
@@ -105,7 +86,6 @@ public class Bettor
 
     public int MinimumBetAmount
     {
-        get { return _minimumBetAmount; }
         set { _minimumBetAmount = value; }
     }
     #endregion
@@ -135,23 +115,13 @@ public class Bettor
     }
 
     /// <summary>
-    /// Clears the user's current bet
-    /// </summary>
-    public void ClearBet()
-    {
-        // TODO: Implement Method
-    }
-
-    /// <summary>
     /// Have no idea
     /// </summary>
     /// <param name="winnerNo"></param>
     public void Collect(int winnerNo)
     {
         double betpayout = _bet.PayOut(winnerNo);
-        
         _cash += betpayout;
-        
     }
 
     /// <summary>
@@ -164,7 +134,7 @@ public class Bettor
         _bet.AddBetToList(_betDescUI.Text);
     }
     
-    public double ValidateBetAmount(string currentBetAmount, Bettor crtBettor)
+    public double ValidateBetAmount(string currentBetAmount)
     {
         // Variable to hold the parsed value temporarily
         double parsedBetAmount;
@@ -173,12 +143,7 @@ public class Bettor
         bool isValidBetAmount = Double.TryParse(currentBetAmount, out parsedBetAmount);
 
         // If the _txtBettorAmount null/whitespaces or the parsing failed sets the cash to 0
-        if (String.IsNullOrEmpty(currentBetAmount) || isValidBetAmount == false)
-        {
-            parsedBetAmount = 0;
-            return parsedBetAmount;
-        }
-        else if (parsedBetAmount < _minimumBetAmount)
+        if (String.IsNullOrEmpty(currentBetAmount) || isValidBetAmount == false || parsedBetAmount < _minimumBetAmount || parsedBetAmount > _cash)
         {
             parsedBetAmount = 0;
             return parsedBetAmount;
@@ -189,28 +154,19 @@ public class Bettor
     
     public int ValidateRacer(string hamsterRacerName)
     {
-        if (hamsterRacerName == "Puffy")
+        switch (hamsterRacerName)
         {
-            // Bettor chose Racer Puffy
-            return 1;
+            case "Puffy":
+                return 1;
+            case "Rolly":
+                return 2;
+            case "Tofu":
+                return 3;
+            case "Whiskers":
+                return 4;
+            default:
+                return 0;
         }
-        else if (hamsterRacerName == "Rolly")
-        {
-            // Bettor chose Racer Rolly
-            return 2;
-        }
-        else if (hamsterRacerName == "Tofu")
-        {
-            // Bettor chose Racer Tofu
-            return 3;
-        }
-        else if (hamsterRacerName == "Whiskers")
-        {
-            // Bettor chose Racer Whiskers
-            return 4;
-        }
-        // Otherwise it wasn't a valid racer
-        return 0;
     }
     #endregion
 

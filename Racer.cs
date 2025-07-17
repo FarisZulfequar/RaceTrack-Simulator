@@ -50,22 +50,13 @@ public class Racer
     
     #region Properties
 
-    public double StartPosition
-    {
-        get { return _startPosition; }
-        set { _startPosition = value; }
-    }
-
     public double Location
     {
-        get { return _location; }
         set { _location = value; }
     }
 
-    public Image RacerUI
-    {
-        get { return _racerUI; }
-    }
+    public Image RacerUI => _racerUI;
+
     #endregion
     
     #region Methods

@@ -34,21 +34,9 @@ public class RaceTrackSimulator
     #endregion
 
     #region Properties
-    public List<Bettor> BettorList
-    {
-        get
-        {
-            return _bettorList;
-        }
-    }
+    public List<Bettor> BettorList => _bettorList;
 
-    public List<Racer> RaceList
-    {
-        get
-        {
-            return _racerList;
-        }
-    }
+    public List<Racer> RaceList => _racerList;
 
     public Bettor CurrentBettor
     {

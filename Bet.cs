@@ -18,7 +18,7 @@ public struct Bet
 
     private Bettor _crtBettor;
     
-    private ObservableCollection<string> _betListAsString = new ObservableCollection<string>();
+    private List<string> _betListAsString = new List<string>();
     #endregion
 
     #region Constructor
@@ -34,40 +34,17 @@ public struct Bet
         _amount = amount;
         _racerNo = racerNo;
         _crtBettor = bettor;
-        _betListAsString = new ObservableCollection<string>();
+        _betListAsString = new List<string>();
     }
 
-    public void AddBetToList(string betReview)
-    {
-        _betListAsString.Add(betReview);
-    }
-
+    public void AddBetToList(string betReview) { _betListAsString.Add(betReview); }
     #endregion
     
     #region Properties
+    public double Amount => _amount;
 
-    public string Description
-    {
-        get
-        {
-            return $"Bet {_amount} on racer {_racerNo}";
-        }
-    }
+    public List<string> BetListAsString => _betListAsString;
 
-    public double Amount
-    {
-        get { return _amount; }
-    }
-
-    public int RacerNo
-    {
-        get { return _racerNo; }
-    }
-
-    public ObservableCollection<string> BetListAsString
-    {
-        get { return _betListAsString; }
-    }
     #endregion
     
     #region Methods
