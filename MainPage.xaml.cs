@@ -9,11 +9,6 @@ public partial class MainPage : ContentPage
 {
 	#region Field Variables
 	/// <summary>
-	/// I have no idea what this does
-	/// </summary>
-	private static Random s_randomizer;
-
-	/// <summary>
 	/// Holds the 4 _imgRacer images I think
 	/// </summary>
 	private List<Image> _racerImageList;
@@ -34,7 +29,6 @@ public partial class MainPage : ContentPage
 	/// </summary>
 	public MainPage()
 	{
-		s_randomizer = new Random();
 		_racerImageList = new List<Image>();
 		_raceTrackSim = new RaceTrackSimulator();
 		_raceInterval = Dispatcher.CreateTimer();
@@ -58,15 +52,11 @@ public partial class MainPage : ContentPage
 
 	public string LblMinimumCheerTitle
 	{
-		get { return _lblMinimumCheerTitle.Text; }
 		set {_lblMinimumCheerTitle.Text = value; }
 	}
 
-	public IDispatcherTimer RaceInterval
-	{
-		get { return _raceInterval; }
-		set { _raceInterval = value; }
-	}
+	public IDispatcherTimer RaceInterval => _raceInterval;
+
 	#endregion
 
 	#region Methods
@@ -76,6 +66,7 @@ public partial class MainPage : ContentPage
 	/// </summary>
 	private void CreateRacers()
 	{
+		
 		// Creates the 4 Hamster Racer
 		Racer firstRacer = new Racer(_imgRacer1);
 		Racer secondRacer = new Racer(_imgRacer2);
@@ -232,40 +223,38 @@ public partial class MainPage : ContentPage
 		if (Isracer1Win)
 		{
 			// If racer 1 finished first, they won the race
-			_raceInterval.Stop();
 			DisplayAlert("Racer 1 Win", "Puffy has won the Hamster Race!", "OK");
 			DisplayBetReviewDashBoard(1);
-			_btnRestartRace.IsEnabled = true;
-			ToggleMusic();
+			stopRace();
 		}
 		else if (Isracer2Win)
 		{
 			// If racer 2 finished first, they won the race
-			_raceInterval.Stop();
 			DisplayAlert("Racer 2 Win", "Rolly has won the Hamster Race!", "OK");
 			DisplayBetReviewDashBoard(2);
-			_btnRestartRace.IsEnabled = true;
-			ToggleMusic();
+			stopRace();
 		}
 		else if (Isracer3Win)
 		{
 			// If racer 3 finished first, they won the race
-			_raceInterval.Stop();
 			DisplayAlert("Racer 3 Win", "Tofu has won the Hamster Race!", "OK");
 			DisplayBetReviewDashBoard(3);
-			_btnRestartRace.IsEnabled = true;
-			ToggleMusic();
+			stopRace();
 		}
 		else if (Isracer4Win)
 		{
 			// If racer 4 finished first, they won the race
-			_raceInterval.Stop();
 			DisplayAlert("Racer 4 Win", "Whiskers has won the Hamster Race!", "OK");
 			DisplayBetReviewDashBoard(4);
-			_btnRestartRace.IsEnabled = true;
-			ToggleMusic();
+			stopRace();
 		}
-		
+	}
+
+	private void stopRace()
+	{
+		_raceInterval.Stop();
+		_btnRestartRace.IsEnabled = true;
+		ToggleMusic();
 	}
 
 	private void SelectingAllRacersToStart()
@@ -275,7 +264,6 @@ public partial class MainPage : ContentPage
 		{
 			// For each racer, sets their X & Y coordinates to 0
 			racer.TakeStartingPosition(0,0);
-			
 		}
 	}
 
@@ -305,17 +293,9 @@ public partial class MainPage : ContentPage
 	
 	public void ToggleMusic()
 	{
-
 		// Play the audio
-		if (_audioPlayer.IsPlaying)
-		{
-			_audioPlayer.Stop();
-		}
-		else
-		{
-			_audioPlayer.Play();
-		}
-        
+		if (_audioPlayer.IsPlaying) { _audioPlayer.Stop(); }
+		else { _audioPlayer.Play(); }
 		_audioPlayer.Volume = 0.1f;
 	}
 	

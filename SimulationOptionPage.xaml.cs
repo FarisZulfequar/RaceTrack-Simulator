@@ -95,19 +95,15 @@ public partial class SimulationOptionPage : ContentPage
             case "Slow":
                 _mainPage.RaceInterval.Interval = TimeSpan.FromMilliseconds(600);
                 break;
-            
             case "Medium":
                 _mainPage.RaceInterval.Interval = TimeSpan.FromMilliseconds(400);
                 break;
-            
             case "Fast":
                 _mainPage.RaceInterval.Interval = TimeSpan.FromMilliseconds(200);
                 break;
-            
             case "FULL SEND!":
                 _mainPage.RaceInterval.Interval = TimeSpan.FromMilliseconds(50);
                 break;
-            
             default:
                 throw new OptionSimulatorException("Please enter a valid Hamster Coin Speed.");
             
