@@ -1,17 +1,54 @@
-# WARNING! READ THIS BEFORE STARTING THE PROGRAM OTHERWISE THE PROGRAM WILL NOT RUN!
+# 🏁 Racetrack Simulator
 
-### Steps To Download and Install Plugin.MAUI.Audio
+A simulation game featuring hamster racing, betting mechanics, and adjustable simulation speed. Originally created as a school assignment, now expanded into a standalone personal project.
 
-#### Step 1: At the bottom left of Rider you will see "NuGet". Click on it
+---
 
-![image](https://github.com/user-attachments/assets/a6b6c493-5426-42f5-8e86-f7e3a22b0d68)
+## ⚠️ Important: Install Plugin.MAUI.Audio Before Running
 
-#### Step 2: At the search bar enter "Plugin.MAUI.Audio"
+This project requires the `Plugin.MAUI.Audio` NuGet package.
 
-![image](https://github.com/user-attachments/assets/a8be4475-eb8d-4217-8013-353c23b150fd)
+### 📥 Installation Steps (in JetBrains Rider)
+1. At the bottom-left of Rider, click on **NuGet**.
 
-#### Step 3: Right Click on "Plugin.MAUI.Audio" and install
+   ![Step 1](https://github.com/user-attachments/assets/a256e726-f9b0-4ca0-9996-30f84ccea8bc)
 
-![image](https://github.com/user-attachments/assets/5845236d-a2df-42b4-b147-720cf95818d7)
+3. In the search bar, type `Plugin.MAUI.Audio`.
+   ![Step 2](https://github.com/user-attachments/assets/7ca34417-c9c5-426d-b2fa-85cfe3940dc4)
 
-#### Step 4: Save the Changes (Command+S). Commit if needed.
+4. Right-click on the package and choose **Install**.
+   ![Step 3](https://github.com/user-attachments/assets/3c38b161-9119-46a7-8f80-9a8266f297f7)
+
+5. Save changes (Command+S or Ctrl+S), and commit if needed.
+
+---
+
+## 🚀 Features
+- 🎲 Place bets on hamster racers
+- 🐹 Change racer speed dynamically
+- 🧑 Rename the bettor/player
+
+---
+
+## 📸 Screenshots
+*(Coming soon! You can drag and drop screenshots or .gifs here)*
+
+---
+
+## 🛠️ Tech Stack
+- 💻 Language: C# (.NET MAUI)
+- 🧰 NuGet Dependency: `Plugin.MAUI.Audio`
+- 🗃️ Version Control: Git + GitHub
+
+---
+
+## 👨‍💻 Author
+**Faris Zulfequar**  
+GitHub: [@FarisZulfequar](https://github.com/FarisZulfequar)
+
+---
+
+## 📝 License
+*Coming soon. Add an open-source license (like MIT) if you want others to use or contribute.*
+
+
