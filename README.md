@@ -1,6 +1,6 @@
 # 🏁 Racetrack Simulator
 
-A simulation game featuring hamster racing, betting mechanics, and adjustable simulation speed. Originally created as a school assignment, now expanded into a standalone personal project.
+A interactive simulation game where you place bets on hamster racers and control the race speed. Built with C# and .NET MAUI to showcase real-time simulation and user interaction.
 
 ---
 
@@ -11,7 +11,7 @@ This project requires the `Plugin.MAUI.Audio` NuGet package.
 ### 📥 Installation Steps (in JetBrains Rider)
 1. At the bottom-left of Rider, click on **NuGet**.
 
-   ![Step 1](https://github.com/user-attachments/assets/a256e726-f9b0-4ca0-9996-30f84ccea8bc)
+   !<img width="180" height="1000" alt="img1" src="https://github.com/user-attachments/assets/17f2899f-8a82-4579-9316-5f765ccf54d3" />
 
 3. In the search bar, type `Plugin.MAUI.Audio`.
    ![Step 2](https://github.com/user-attachments/assets/7ca34417-c9c5-426d-b2fa-85cfe3940dc4)
@@ -31,7 +31,14 @@ This project requires the `Plugin.MAUI.Audio` NuGet package.
 ---
 
 ## 📸 Screenshots
-*(Coming soon! You can drag and drop screenshots or .gifs here)*
+
+### Main Page
+![img4](https://github.com/user-attachments/assets/4f915aaa-48cb-4e3d-af75-ff20ac8bd61a)
+*The starting screen where you place your bets.*
+
+### Option Page
+![img5](https://github.com/user-attachments/assets/29ce7a05-42ae-4d73-b57f-914f0540f44d)
+*Option screen where Bettor's name, simulation speed, and minimum coin bet amount can be changed.*
 
 ---
 
@@ -49,6 +56,6 @@ GitHub: [@FarisZulfequar](https://github.com/FarisZulfequar)
 ---
 
 ## 📝 License
-*Coming soon. Add an open-source license (like MIT) if you want others to use or contribute.*
 
-
+This project is licensed under the [MIT License](LICENSE).  
+Feel free to use, modify, and share it — just remember to give credit!
