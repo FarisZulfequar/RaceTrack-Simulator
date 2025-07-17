@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RaceTrackSim.MainPage">
+	<Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="Auto, Auto, Auto, Auto" RowSpacing="20">
+		<VerticalStackLayout Grid.Column="0" Grid.Row="0" Spacing="10" Grid.ColumnSpan="2">
+			<AbsoluteLayout>
+				<Image x:Name="_imgRacer1"
+					Source="hamsterroll.gif"
+					MaximumWidthRequest="60"
+					MaximumHeightRequest="60"
+					IsAnimationPlaying="True"
+					AbsoluteLayout.LayoutFlags="PositionProportional"
+					AbsoluteLayout.LayoutBounds="0, 0"
+				/>
+			</AbsoluteLayout>
+			
+			<Line X1="0" Y1="0" X2="10000" Y2="0" Stroke="Black" StrokeThickness="2"/>
+		
+			<AbsoluteLayout>
+				<Image x:Name="_imgRacer2"
+				       Source="hamsterroll.gif"
+				       WidthRequest="60"
+				       HeightRequest="60"
+				       IsAnimationPlaying="True"
+				       AbsoluteLayout.LayoutFlags="PositionProportional"
+				       AbsoluteLayout.LayoutBounds="0, 0"
+				/>
+			</AbsoluteLayout>
+			
+			<Line X1="0" Y1="0" X2="10000" Y2="0" Stroke="Black" StrokeThickness="2"/>
+			
+			<AbsoluteLayout>
+				<Image x:Name="_imgRacer3"
+				       Source="hamsterroll.gif"
+				       WidthRequest="60"
+				       HeightRequest="60"
+				       IsAnimationPlaying="True"
+				       AbsoluteLayout.LayoutFlags="PositionProportional"
+				       AbsoluteLayout.LayoutBounds="0, 0"
+				/>
+			</AbsoluteLayout>
+			
+			<Line X1="0" Y1="0" X2="10000" Y2="0" Stroke="Black" StrokeThickness="2"/>
+			
+			<AbsoluteLayout>
+				<Image x:Name="_imgRacer4"
+				       Source="hamsterroll.gif"
+				       WidthRequest="60"
+				       HeightRequest="60"
+				       IsAnimationPlaying="True"
+				       AbsoluteLayout.LayoutFlags="PositionProportional"
+				       AbsoluteLayout.LayoutBounds="0, 0"
+				/>
+			</AbsoluteLayout>
+			
+			<Line X1="0" Y1="0" X2="10000" Y2="0" Stroke="Black" StrokeThickness="2"/>
+			
+		</VerticalStackLayout>
+		
+		<AbsoluteLayout HorizontalOptions="End" Grid.Column="3" Grid.Row="0">
+			<Border Stroke="Green" StrokeThickness="2">
+				<Image x:Name="_imgFinishLine"
+				       HorizontalOptions="End"
+				       Source="finishline.jpg"	
+				       HeightRequest="320"
+				       AbsoluteLayout.LayoutFlags="PositionProportional"
+				       AbsoluteLayout.LayoutBounds="1, 0.0"
+				/>
+			</Border>
+		</AbsoluteLayout>
+		
+		<VerticalStackLayout Grid.Column="0" Grid.Row="1" Spacing="10" Grid.ColumnSpan="3" 
+		                     HorizontalOptions="Center">
+			<Label
+				Text="Racing Fuzzy Parlor"
+				FontSize="17"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+			/>
+			<Label x:Name="_lblMinimumCheerTitle"
+				Text="Minimum Cheer is: 5"
+				FontSize="17"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+			/>
+			<Label
+				Text="Puffy/Rolly/Tofu/Whiskers"
+				FontSize="17"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+			/>
+		</VerticalStackLayout>
+		
+		<VerticalStackLayout Grid.Column="0" Grid.Row="2" Spacing="15">
+			<RadioButton x:Name="_rbtnBettor1"
+			             IsChecked="False"
+			             Content="Nibble's Button"
+			/>
+			<RadioButton x:Name="_rbtnBettor2"
+			             IsChecked="False"
+			             Content="Fluff's Button"
+			/>
+			<RadioButton x:Name="_rbtnBettor3"
+			             IsChecked="False"
+			             Content="Squeaks's Button"
+			/>
+		</VerticalStackLayout>
+		<VerticalStackLayout Grid.Column="1" Grid.Row="2" Spacing="20" HorizontalOptions="Fill"
+		                     Margin="10,0,10,0">
+			<Entry x:Name="_txtBet1"
+				Placeholder="Nibble's Cuteness Cheer"
+				HeightRequest="30"
+				IsReadOnly="True"/>
+			<Entry x:Name="_txtBet2"
+				Placeholder="Fluff's Cuteness Cheer"
+				HeightRequest="30"
+				IsReadOnly="True"/>
+			<Entry x:Name="_txtBet3"
+				Placeholder="Squeak's Cuteness Cheer"
+				HeightRequest="30"
+				IsReadOnly="True"/>
+		</VerticalStackLayout>
+		
+		<VerticalStackLayout Grid.Column="3" Grid.Row="2" HorizontalOptions="End" Margin="0,0,0,0" Spacing="10">
+			<ImageButton x:Name="_imgStartRaceButton"
+				HorizontalOptions="End"
+				Source="carrotflag.jpg"
+				HeightRequest="80"
+				Clicked="OnStartRace"
+			/>
+			<Button x:Name="_btnRestartRace"
+				Text="Restart Race"
+				FontSize="16"
+				IsVisible="True"
+				WidthRequest="130"
+				IsEnabled="False"
+				Clicked="OnRaceRestartClicked"
+			/>
+		</VerticalStackLayout>
+		
+		<VerticalStackLayout Grid.Column="0" Grid.Row="4" Spacing="10" HorizontalOptions="Start" 
+		                     Margin="20,0,0,0">
+			<Label
+				Text="Bettor cheers with"
+				FontSize="16"
+			/>
+			<Button x:Name="_btnPlaceBet"
+				Text="Place Cheer"
+				Clicked="OnPlaceBet"/>
+		</VerticalStackLayout>
+		
+		<HorizontalStackLayout Grid.Column="1" Grid.Row="4" HorizontalOptions="Fill">
+			<Entry x:Name="_txtBettorCash"
+				Placeholder="Hamster Cuteness"
+				HeightRequest="40"
+				WidthRequest="80"
+				Margin="10,0,0,60"
+			/>
+			<Picker x:Name="_pckHamsterRacers"
+				HeightRequest="40" WidthRequest="100" Margin="10,0,0,60"
+				Title="{OnPlatform MacCatalyst='', Default='Select Hamster'}">
+				<Picker.Items>
+					<x:String>Puffy</x:String>
+					<x:String>Rolly</x:String>
+					<x:String>Tofu</x:String>
+					<x:String>Whiskers</x:String>
+				</Picker.Items>
+			</Picker>
+		</HorizontalStackLayout>
+	</Grid>
+</ContentPage>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RaceTrackSim.SimulationOptionPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Margin="10" HorizontalOptions="Center">
+            <!-- 1st Section to change the first Bettor Name--> 
+            <Border Padding="20" Stroke="Red" StrokeThickness="2">
+                <VerticalStackLayout Spacing="20">
+                    <Label
+                        Text="Enter The Name Of First Hamster Fan"
+                        FontSize="20"
+                    />
+                    <Entry x:Name="_txtFirstBettorName"
+                        Placeholder="Hamster Fan"
+                        HorizontalOptions="Fill"
+                    />
+                    <Button x:Name="_btnFirstBettorName"
+                            Text="Change 1st Name"  
+                            TextColor="Red"
+                            BackgroundColor="Black"
+                            Clicked="ChangeFirstBettorName"
+                    />
+                </VerticalStackLayout>
+            </Border>
+            
+            <!-- 2nd Section to change the second Bettor Name-->
+            <Border Padding="20" Stroke="Gold" StrokeThickness="2">
+                <VerticalStackLayout Spacing="20">
+                    <Label
+                        Text="Enter The Name Of Second Hamster Fan"
+                        FontSize="20"
+                    />
+                    <Entry x:Name="_txtSecondBettorName"
+                           Placeholder="Hamster Fan"
+                           HorizontalOptions="Fill"
+                    />
+                    <Button x:Name="_btnSecondBettorName"
+                            Text="Change 2nd Name"  
+                            TextColor="Gold"
+                            BackgroundColor="Black"
+                            Clicked="ChangeSecondBettorName"
+                    />
+                </VerticalStackLayout>
+            </Border>
+            
+            <!-- 3rd Section to change the third Bettor Name-->
+            <Border Padding="20" Stroke="Blue" StrokeThickness="2">
+                <VerticalStackLayout Spacing="20">
+                    <Label
+                        Text="Enter The Name Of Third Hamster Fan"
+                        FontSize="20"
+                    />
+                    <Entry x:Name="_txtThirdBettorName"
+                           Placeholder="Bettor Hamster Fan"
+                    />
+                    <Button x:Name="_btnThirdBettorName"
+                            Text="Change 3rd Name"
+                            TextColor="CornflowerBlue"
+                            BackgroundColor="Black"
+                            Clicked="ChangeThirdBettorName"
+                    />
+                </VerticalStackLayout>
+            </Border>
+            
+            <!-- 3rd Section to change the third Bettor Name-->
+            <Border Padding="20" Stroke="Orange" StrokeThickness="2">
+                <VerticalStackLayout Spacing="20">
+                    <Label
+                        Text="Enter A Minimum Hamster Coins"
+                        FontSize="20"
+                    />
+                    <Entry x:Name="_txtMinimumBet"
+                           Placeholder="Minimum Hamster Coins"
+                    />
+                    <Button x:Name="_btnMinimumBet"
+                            Text="Change Hamster Coins"
+                            TextColor="Orange"
+                            BackgroundColor="Black"
+                            Clicked="ChangeMinimumBetAmount"
+                    />
+                </VerticalStackLayout>
+            </Border>
+            
+            <Border Padding="20" Stroke="Magenta" StrokeThickness="2">
+                <VerticalStackLayout Spacing="20">
+                    <Label
+                        Text="Race Simulation Speed"
+                        FontSize="20"
+                    />
+                    <Button x:Name="_btnSlowSpeed"
+                            Text="Slow"
+                            TextColor="Magenta"
+                            BackgroundColor="Black"
+                            Clicked="ChangeSimulationSpeed"
+                    />
+                    <Button x:Name="_btnMedium"
+                            Text="Medium"
+                            TextColor="Magenta"
+                            BackgroundColor="Black"
+                            Clicked="ChangeSimulationSpeed"
+                    />
+                    <Button x:Name="_btnFastSpeed"
+                            Text="Fast"
+                            TextColor="Magenta"
+                            BackgroundColor="Black"
+                            Clicked="ChangeSimulationSpeed"
+                    />
+                    <Button x:Name="_btnFastestSpeed"
+                            Text="FULL SEND!"
+                            TextColor="Magenta"
+                            BackgroundColor="Black"
+                            Clicked="ChangeSimulationSpeed"
+                    />
+                </VerticalStackLayout>
+            </Border>
+            
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

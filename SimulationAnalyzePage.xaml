@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RaceTrackSim.SimulationAnalyzePage">
+    <ScrollView>
+        <Grid ColumnDefinitions="*" RowDefinitions="Auto, *">
+            <VerticalStackLayout Grid.Column="0" Grid.Row="0" Spacing="20" Margin="10" HorizontalOptions="Center">
+                <!-- 1st Section to change the first Bettor Name--> 
+                <Border Padding="20" Stroke="Green" StrokeThickness="2">
+                    <VerticalStackLayout Spacing="20">
+                        <Label
+                            Text="List Of All Hamster Fan's Cheers"
+                            FontSize="20"
+                        />
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+            
+            <VerticalStackLayout Grid.Column="0" Grid.Row="1" Spacing="20" Margin="10" HorizontalOptions="Fill">
+                <Border Padding="20" Stroke="Green" StrokeThickness="2">
+                    <CollectionView x:Name="_lstBettorBet"/>
+                </Border>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
