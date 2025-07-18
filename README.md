@@ -4,6 +4,13 @@ A interactive simulation game where you place bets on hamster racers and control
 
 ---
 
+## 📝 License
+
+This project is licensed under the [MIT License](LICENSE).  
+This code is for educational purposes only. Do not submit as your own work for graded assignments. I will not be resopnsible for any trouble that it may cause
+
+---
+
 ## ⚠️ Important: Install Plugin.MAUI.Audio Before Running
 
 This project requires the `Plugin.MAUI.Audio` NuGet package.
@@ -54,8 +61,3 @@ This project requires the `Plugin.MAUI.Audio` NuGet package.
 GitHub: [@FarisZulfequar](https://github.com/FarisZulfequar)
 
 ---
-
-## 📝 License
-
-This project is licensed under the [MIT License](LICENSE).  
-This code is for educational purposes only. Do not submit as your own work for graded assignments. I will not be resopnsible for any trouble that it may cause
