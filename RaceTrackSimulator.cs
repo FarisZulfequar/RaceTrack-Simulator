@@ -9,7 +9,7 @@ public class RaceTrackSimulator
     /// <summary>
     /// List of the all bettors
     /// </summary>
-    private List<Bettor> _bettorList;
+    private static List<Bettor> _bettorList;
     
     /// <summary>
     /// Current bettor
@@ -34,7 +34,7 @@ public class RaceTrackSimulator
     #endregion
 
     #region Properties
-    public List<Bettor> BettorList => _bettorList;
+    public static List<Bettor> BettorList => _bettorList;
 
     public List<Racer> RaceList => _racerList;
 

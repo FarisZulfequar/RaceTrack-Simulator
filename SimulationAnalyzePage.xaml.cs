@@ -14,11 +14,11 @@ public partial class SimulationAnalyzePage : ContentPage
         
     }
 
-    public void ShowingAllBettorsBets()
+    public void ShowingAllBettorsBets(object sender, EventArgs e)
     {
         _allBets.Clear();
         
-        foreach (Bettor bettor in _mainPage.RaceTrackSim.BettorList)
+        foreach (Bettor bettor in RaceTrackSimulator.BettorList)
         {
             if (bettor.Bet.BetListAsString != null)
             {

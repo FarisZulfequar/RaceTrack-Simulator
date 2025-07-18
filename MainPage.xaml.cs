@@ -105,7 +105,7 @@ public partial class MainPage : ContentPage
 	private Bettor OnSelectBettor()
 	{
 		// Goes through the Bettor List for each Bettor
-		foreach (Bettor bettor in _raceTrackSim.BettorList)
+		foreach (Bettor bettor in RaceTrackSimulator.BettorList)
 		{
 			// If any of their RadioButton is checked returns the Bettor
 			if (bettor.BettorUI.IsChecked)
@@ -192,7 +192,7 @@ public partial class MainPage : ContentPage
 	private bool CheckAllBettorsBet()
 	{
 		// Goes through the Bettor List for each Bettor
-		foreach (Bettor bettor in _raceTrackSim.BettorList)
+		foreach (Bettor bettor in RaceTrackSimulator.BettorList)
 		{
 			// If any of their RadioButton is checked returns the Bettor
 			if (bettor.HasPlaceBet == false)
@@ -269,7 +269,7 @@ public partial class MainPage : ContentPage
 
 	private void DisplayBetReviewDashBoard(int racerWonNo)
 	{
-		foreach (Bettor bettor in _raceTrackSim.BettorList)
+		foreach (Bettor bettor in RaceTrackSimulator.BettorList)
 		{
 			bettor.Collect(racerWonNo);
 			bettor.UpdateLabels();
@@ -278,7 +278,7 @@ public partial class MainPage : ContentPage
 
 	private void OnRaceRestartClicked(object sender, EventArgs e)
 	{
-		foreach (Bettor bettor in _raceTrackSim.BettorList)
+		foreach (Bettor bettor in RaceTrackSimulator.BettorList)
 		{
 			bettor.BetDescUI.Text = null;
 			bettor.BetDescUI.Placeholder = $"{bettor.Name}'s Cuteness Cheer";

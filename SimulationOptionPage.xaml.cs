@@ -18,7 +18,7 @@ public partial class SimulationOptionPage : ContentPage
     private void ChangeFirstBettorName(object sender, EventArgs e)
     {
         string name = _txtFirstBettorName.Text;
-        Bettor bettor = _mainPage.RaceTrackSim.BettorList[0];
+        Bettor bettor = RaceTrackSimulator.BettorList[0];
         bettor.Name = name;
         bettor.BettorUI.Content = $"{name}'s Button";
         bettor.BetDescUI.Placeholder = $"{name}'s Cuteness Cheer";
@@ -27,7 +27,7 @@ public partial class SimulationOptionPage : ContentPage
     private void ChangeSecondBettorName(object sender, EventArgs e)
     {
         string name = _txtSecondBettorName.Text;
-        Bettor bettor = _mainPage.RaceTrackSim.BettorList[1];
+        Bettor bettor = RaceTrackSimulator.BettorList[1];
         bettor.Name = name;
         bettor.BettorUI.Content = $"{name}'s Button";
         bettor.BetDescUI.Placeholder = $"{name}'s Cuteness Cheer";
@@ -36,7 +36,7 @@ public partial class SimulationOptionPage : ContentPage
     private void ChangeThirdBettorName(object sender, EventArgs e)
     {
         string name = _txtThirdBettorName.Text;
-        Bettor bettor = _mainPage.RaceTrackSim.BettorList[2];
+        Bettor bettor = RaceTrackSimulator.BettorList[2];
         bettor.Name = name;
         bettor.BettorUI.Content = $"{name}'s Button";
         bettor.BetDescUI.Placeholder = $"{name}'s Cuteness Cheer";
@@ -51,7 +51,7 @@ public partial class SimulationOptionPage : ContentPage
 
             if (isValidMinimumBetAmount)
             {
-                foreach (Bettor bettor in _mainPage.RaceTrackSim.BettorList)
+                foreach (Bettor bettor in RaceTrackSimulator.BettorList)
                 {
                     bettor.MinimumBetAmount = minimumbetAmount;
                 }

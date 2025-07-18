@@ -4,9 +4,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RaceTrackSim.SimulationAnalyzePage">
     <ScrollView>
-        <Grid ColumnDefinitions="*" RowDefinitions="Auto, *">
-            <VerticalStackLayout Grid.Column="0" Grid.Row="0" Spacing="20" Margin="10" HorizontalOptions="Center">
-                <!-- 1st Section to change the first Bettor Name--> 
+        <Grid ColumnDefinitions="*" RowDefinitions="Auto, Auto, *">
+            <VerticalStackLayout Grid.Column="0" Grid.Row="1" Spacing="20" Margin="10" HorizontalOptions="Center">
+                <!-- Refreshes the list and shows all the current Bettor's Bets--> 
+                <Button x:Name="_btnRefresh"
+                        Text="Refresh"  
+                        TextColor="Green"
+                        FontSize="20"
+                        BackgroundColor="Transparent"
+                        BorderColor="Green"
+                        BorderWidth="5"
+                        Clicked="ShowingAllBettorsBets"
+                />
                 <Border Padding="20" Stroke="Green" StrokeThickness="2">
                     <VerticalStackLayout Spacing="20">
                         <Label
@@ -17,7 +26,7 @@
                 </Border>
             </VerticalStackLayout>
             
-            <VerticalStackLayout Grid.Column="0" Grid.Row="1" Spacing="20" Margin="10" HorizontalOptions="Fill">
+            <VerticalStackLayout Grid.Column="0" Grid.Row="2" Spacing="20" Margin="10" HorizontalOptions="Fill">
                 <Border Padding="20" Stroke="Green" StrokeThickness="2">
                     <CollectionView x:Name="_lstBettorBet"/>
                 </Border>
