@@ -58,4 +58,4 @@ GitHub: [@FarisZulfequar](https://github.com/FarisZulfequar)
 ## 📝 License
 
 This project is licensed under the [MIT License](LICENSE).  
-Feel free to use, modify, and share it — just remember to give credit!
+This code is for educational purposes only. Do not submit as your own work for graded assignments. I will not be resopnsible for any trouble that it may cause
